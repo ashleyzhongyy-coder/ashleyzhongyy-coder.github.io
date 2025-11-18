@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>STETMN London — Fine Fragrance</title>
+  <meta name="description" content="STETMN London — 现代香氛品牌，香水、香氛蜡烛与居家香氛艺术。" />
+  <meta property="og:title" content="STETMN London" />
+  <meta property="og:description" content="现代香氛品牌 — 香水 · 居家香氛 · 蜡烛" />
+  <meta property="og:url" content="https://www.stetmnlondon.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <style>
+    :root{
+      --maxw:1100px; --accent:#111; --muted:#7a7a7a; --gap:22px;
+      --brand-font: "Helvetica Neue", Arial, sans-serif;
+    }
+    *{box-sizing:border-box}
+    body{font-family:var(--brand-font);margin:0;color:var(--accent);line-height:1.6;background:#fff}
+    a{text-decoration:none;color:inherit}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:28px}
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+    .brand{font-weight:700;letter-spacing:3px}
+    nav a{margin-left:18px;font-size:14px;color:var(--muted)}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:40px;align-items:center;padding:40px 0}
+    .hero h1{font-size:34px;margin:0 0 10px}
+    .hero p{color:var(--muted);margin:0 0 18px}
+    .cta{display:inline-block;border:1px solid #111;padding:10px 16px;border-radius:3px;font-weight:600}
+    .product-card{border:1px solid #f0f0f0;padding:18px;border-radius:8px;text-align:center}
+    .product-card img{width:100%;height:260px;object-fit:cover;border-radius:6px;background:#f6f6f6}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
+    .section{padding:48px 0;border-top:1px solid #f3f3f3}
+    .about {max-width:760px}
+    footer{padding:36px 0;color:var(--muted);text-align:center;font-size:13px;border-top:1px solid #f3f3f3}
+
+    /* responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;padding:24px 0}
+      .grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:560px){
+      .wrap{padding:18px}
+      .grid{grid-template-columns:1fr}
+      nav{display:none}
+      .hero h1{font-size:26px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">STETMN</div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div>
+          <h1 id="hero-title">STETMN London</h1>
+          <p>现代香氛 · 以低调与纯粹为美学基调，专注香水与居家香氛的细节设计。</p>
+          <p style="color:var(--muted)">Signature perfumes · Scented candles · Home scent</p>
+          <p style="margin-top:18px">
+            <a class="cta" href="#products">查看产品</a>
+          </p>
+        </div>
+
+        <aside>
+          <div class="product-card">
+            <!-- 占位图片：建议上传真实图片到 /docs/images/product1.jpg 并替换下面 src -->
+            <img src="images/product1.jpg" alt="STETMN Signature Perfume — 占位图" loading="lazy">
+            <h3 style="margin:12px 0 6px">Signature No.01</h3>
+            <div style="color:var(--muted);font-size:14px">50ml · 经典香调</div>
+            <div style="margin-top:12px;color:var(--muted);font-size:13px">￥400</div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="about" class="section about" aria-labelledby="about-title">
+        <h2 id="about-title" style="margin:0 0 12px">About STETMN</h2>
+        <p style="color:var(--muted)">STETMN 源自伦敦的感官品牌，致力于把现代生活美学与香气结合。我们以简洁克制的视觉与细腻的香调语言，打造适合都市空间的香氛产品。</p>
+      </section>
+
+      <section id="products" class="section" aria-labelledby="products-title">
+        <h2 id="products-title" style="margin:0 0 18px">Featured Products</h2>
+        <div class="grid">
+          <div>
+            <div class="product-card">
+              <img src="images/product1.jpg" alt="Signature No.01">
+              <strong style="display:block;margin-top:12px">Signature No.01</strong>
+              <div style="color:var(--muted);font-size:13px">50ml / ￥400</div>
+            </div>
+          </div>
+          <div>
+            <div class="product-card">
+              <img src="images/candle1.jpg" alt="Scented Candle">
+              <strong style="display:block;margin-top:12px">Scented Candle</strong>
+              <div style="color:var(--muted);font-size:13px">200g / ￥220</div>
+            </div>
+          </div>
+          <div>
+            <div class="product-card">
+              <img src="images/travel.jpg" alt="Travel Spray">
+              <strong style="display:block;margin-top:12px">Travel Spray 15ml</strong>
+              <div style="color:var(--muted);font-size:13px">15ml / ￥150</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section" aria-labelledby="contact-title">
+        <h2 id="contact-title" style="margin:0 0 12px">Contact</h2>
+        <p style="color:var(--muted)">商务与媒体：<a href="mailto:info@stetmnlondon.com">info@stetmnlondon.com</a></p>
+        <p style="color:var(--muted)">更多信息 / 合作请发送邮件，我们会在 2 个工作日内回复。</p>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="year"></span> STETMN London · All Rights Reserved
+    </footer>
+  </div>
+
+  <script>
+    // 小脚本：自动填年份 & 如果图片不存在显示占位
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.querySelectorAll('img').forEach(img=>{
+      img.onerror = ()=> {
+        img.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500"><rect width="100%" height="100%" fill="%23f6f6f6"/><text x="50%" y="50%" fill="%23888" font-size="20" text-anchor="middle" alignment-baseline="middle">STETMN — image</text></svg>'
+      }
+    });
+  </script>
+</body>
+</html>
