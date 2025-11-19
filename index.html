@@ -1,211 +1,625 @@
-=<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>STETMN London</title>
+  <meta charset="UTF-8" />
+  <title>STETMN 什迪｜香氛品牌官方网站</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    /* 全局基础样式 */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-<style>
     body {
-        margin: 0;
-        padding: 0;
-        font-family: "Helvetica Neue", Arial, sans-serif;
-        background: #ffffff;
-        color: #000000;
-        letter-spacing: 0.4px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: #222;
+      background-color: #f7f3ee;
+      line-height: 1.6;
     }
 
-    /* Navigation */
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* 容器 */
+    .container {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    /* 顶部导航栏 */
     header {
-        width: 100%;
-        padding: 20px 40px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        box-sizing: border-box;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(247, 243, 238, 0.9);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
     }
 
-    nav a {
-        margin-left: 30px;
-        text-decoration: none;
-        font-size: 14px;
-        color: #000000;
-        text-transform: uppercase;
-        letter-spacing: 1px;
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
     }
 
-    /* Hero Section */
+    .logo {
+      font-size: 20px;
+      letter-spacing: 0.15em;
+      font-weight: 600;
+    }
+
+    .logo span {
+      font-size: 12px;
+      margin-left: 8px;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: #222;
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero 区 */
     .hero {
-        width: 100%;
-        height: 80vh;
-        background-image: url("images/hero.jpg");
-        background-size: cover;
-        background-position: center;
-        position: relative;
+      padding: 80px 0 60px;
     }
 
-    .hero-text {
-        position: absolute;
-        bottom: 60px;
-        left: 60px;
-        color: #ffffff;
-        font-size: 32px;
-        font-weight: 300;
-        letter-spacing: 2px;
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 40px;
+      align-items: center;
     }
 
-    /* Section common styling */
+    .hero-tag {
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .hero-title {
+      font-size: 34px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .hero-title-cn {
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+
+    .hero-sub {
+      font-size: 15px;
+      color: #555;
+      margin-bottom: 24px;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      padding: 10px 24px;
+      border-radius: 999px;
+      border: 1px solid #222;
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .hero-cta:hover {
+      background: #222;
+      color: #f7f3ee;
+    }
+
+    .hero-right {
+      border-radius: 24px;
+      border: 1px solid rgba(0,0,0,0.05);
+      padding: 20px;
+      background: linear-gradient(135deg, #fdfaf6, #f2e9de);
+    }
+
+    .hero-right p {
+      font-size: 13px;
+      color: #444;
+      margin-bottom: 8px;
+    }
+
+    .hero-right small {
+      font-size: 11px;
+      color: #777;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+    }
+
+    /* 通用标题样式 */
     section {
-        max-width: 960px;
-        margin: 120px auto;
-        padding: 0 20px;
-        line-height: 1.8;
+      padding: 60px 0;
     }
 
-    h2 {
-        font-size: 28px;
-        font-weight: 400;
-        margin-bottom: 20px;
-        letter-spacing: 1px;
+    .section-title {
+      font-size: 20px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
     }
 
-    .subtext {
-        font-size: 14px;
-        opacity: 0.7;
-        margin-bottom: 40px;
+    .section-subtitle {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 24px;
     }
 
-    /* Product Grid */
-    .product-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 50px;
-        margin-top: 50px;
+    /* 品牌区域 */
+    .brand-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 40px;
     }
 
-    .product {
-        text-align: left;
+    .brand-block {
+      margin-bottom: 20px;
     }
 
-    .product img {
-        width: 100%;
-        height: 340px;
-        object-fit: cover;
-        background: #f2f2f2;
+    .brand-block h3 {
+      font-size: 15px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
     }
 
-    .product-title {
-        margin-top: 14px;
-        font-size: 15px;
-        letter-spacing: 0.5px;
-        text-transform: uppercase;
+    .brand-block p {
+      font-size: 14px;
+      color: #444;
     }
 
+    .brand-right {
+      border-left: 1px solid rgba(0,0,0,0.08);
+      padding-left: 24px;
+      font-size: 13px;
+      color: #555;
+    }
+
+    /* 产品卡片区域 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #fbf7f2;
+      border-radius: 18px;
+      padding: 20px 18px;
+      border: 1px solid rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .card-label {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #888;
+    }
+
+    .card-title {
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .card-slogan {
+      font-size: 13px;
+      color: #555;
+    }
+
+    .card-notes {
+      font-size: 12px;
+      color: #555;
+    }
+
+    .card-notes span {
+      font-weight: 500;
+    }
+
+    .card-story {
+      font-size: 12px;
+      color: #777;
+      margin-top: 6px;
+    }
+
+    /* Manifesto 区块 */
+    .manifesto {
+      text-align: center;
+      padding: 70px 16px;
+      border-radius: 28px;
+      border: 1px solid rgba(0,0,0,0.05);
+      background: #fdfaf7;
+    }
+
+    .manifesto small {
+      display: block;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      color: #777;
+    }
+
+    .manifesto p {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .manifesto span {
+      display: block;
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* Footer */
     footer {
-        padding: 50px 0;
-        text-align: center;
-        font-size: 12px;
-        opacity: 0.6;
+      padding: 30px 0 24px;
+      border-top: 1px solid rgba(0,0,0,0.05);
+      font-size: 12px;
+      color: #777;
     }
-</style>
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-brand {
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .footer-slogan {
+      font-size: 12px;
+    }
+
+    /* 响应式 */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none; /* 简化：小屏先不做展开菜单 */
+      }
+
+      .hero-inner,
+      .brand-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .brand-right {
+        border-left: none;
+        border-top: 1px solid rgba(0,0,0,0.08);
+        padding-left: 0;
+        padding-top: 16px;
+      }
+
+      .hero {
+        padding-top: 50px;
+      }
+
+      .hero-title {
+        font-size: 26px;
+      }
+    }
+  </style>
 </head>
-
 <body>
-
-<header>
-    <div style="font-size:18px; letter-spacing:2px;">STETMN LONDON</div>
-    <nav>
-        <a href="#about">About</a>
-        <a href="#products">Products</a>
-    </nav>
-</header>
-
-<!-- Hero -->
-<div class="hero">
-    <div class="hero-text">A New Wave of Fragrance Art</div>
-</div>
-
-<!-- Brand Intro -->
-<section id="about">
-    <h2>STETMN · 什迪</h2>
-    <div class="subtext">New Wave of British Fragrance Art · 英国香氛艺术新浪潮势力</div>
-
-    <h3 style="margin-top:40px;">Brand Positioning｜品牌定位</h3>
-    <p>
-        Crafted with rare fragrance materials to deliver healing scents and luxurious depth.
-        Inspiring a new wave of urban youth with sensual energy.<br><br>
-        以珍稀香氛原材创造独特治愈的芬芳，馥郁轻奢质感，唤醒当代都市新潮年轻人的心灵活力。
-    </p>
-
-    <h3 style="margin-top:40px;">Brand Philosophy｜品牌理念</h3>
-    <p>
-        STETMN believes every form of uniqueness deserves respect.  
-        Through fragrance artistry, we break boundaries and give individuals power to express their truest selves.<br><br>
-        STETMN 主张以“无性别、无国界、无边界”的领先思潮创造多元包容的理想世界，追逐平等，保护独特，崇尚公正，治愈新生。
-    </p>
-
-    <h3 style="margin-top:40px;">Brand Vision｜品牌愿景</h3>
-    <p>
-        STETMN envisions a new nation of fragrance — unrestricted, free, and defined by you.  
-        Every creation empowers the spirit, renewing confidence and strength.<br><br>
-        STETMN 将以新浪潮艺术构建全新的香味国度，让体验者更自信、更坚定、更从容面对世界。
-    </p>
-</section>
-
-<!-- Products -->
-<section id="products">
-    <h2>Fragrance Collection｜香氛系列</h2>
-
-    <div class="product-grid">
-
-        <!-- 6 Perfumes -->
-        <div class="product">
-            <img src="images/perfume1.jpg" alt="">
-            <div class="product-title">Perfume 01</div>
-        </div>
-        <div class="product">
-            <img src="images/perfume2.jpg" alt="">
-            <div class="product-title">Perfume 02</div>
-        </div>
-        <div class="product">
-            <img src="images/perfume3.jpg" alt="">
-            <div class="product-title">Perfume 03</div>
-        </div>
-        <div class="product">
-            <img src="images/perfume4.jpg" alt="">
-            <div class="product-title">Perfume 04</div>
-        </div>
-        <div class="product">
-            <img src="images/perfume5.jpg" alt="">
-            <div class="product-title">Perfume 05</div>
-        </div>
-        <div class="product">
-            <img src="images/perfume6.jpg" alt="">
-            <div the="product-title">Perfume 06</div>
-        </div>
-
-        <!-- 2 Candles -->
-        <div class="product">
-            <img src="images/candle1.jpg" alt="">
-            <div class="product-title">Candle 01</div>
-        </div>
-        <div class="product">
-            <img src="images/candle2.jpg" alt="">
-            <div class="product-title">Candle 02</div>
-        </div>
-
-        <!-- 1 Travel Aroma -->
-        <div class="product">
-            <img src="images/travel1.jpg" alt="">
-            <div class="product-title">Travel Aroma</div>
-        </div>
-
+  <!-- 顶部导航 -->
+  <header>
+    <div class="container nav">
+      <div class="logo">
+        STETMN <span>什迪 / FRAGRANCE</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#brand">Brand</a>
+        <a href="#collection">Collection</a>
+        <a href="#candles">Candles & Cards</a>
+        <a href="#manifesto">Manifesto</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-</section>
+  </header>
 
-<footer>
-    © 2025 STETMN London. All Rights Reserved.
-</footer>
+  <!-- Hero 区 -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div>
+        <div class="hero-tag">NEW WAVE FRAGRANCE ART</div>
+        <h1 class="hero-title">Your difference, makes the world different.</h1>
+        <div class="hero-title-cn">是你的不同，让世界不同</div>
+        <p class="hero-sub">
+          STETMN 什迪——英国香氛艺术新浪潮势力，以无性别、无国界、无边界的香氛美学，
+          为当代都市新潮年轻人唤醒心灵活力。
+        </p>
+        <a class="hero-cta" href="#collection">EXPLORE COLLECTION</a>
+      </div>
+      <div class="hero-right">
+        <p>Dedicated to everyone, who dares to be different.<br>献给每一个敢于不同的你。</p>
+        <p>以珍稀香氛原材创造独特治愈的芬芳，馥郁轻奢质感，在多元包容之中守护每一种独特。</p>
+        <small>STETMN BRAND NOTE</small>
+      </div>
+    </div>
+  </section>
 
+  <!-- 品牌区 -->
+  <section id="brand">
+    <div class="container">
+      <div class="section-title">BRAND</div>
+      <div class="section-subtitle">关于 STETMN 什迪</div>
+
+      <div class="brand-grid">
+        <div>
+          <div class="brand-block">
+            <h3>品牌定位 / POSITIONING</h3>
+            <p>
+              英国香氛艺术新浪潮势力。以珍稀香氛原材创造独特治愈的芬芳，馥郁轻奢质感，
+              唤醒当代都市新潮年轻人的心灵活力。
+            </p>
+          </div>
+
+          <div class="brand-block">
+            <h3>品牌理念 / PHILOSOPHY</h3>
+            <p>
+              STETMN 认为，每一种独特都值得被尊重。以“无性别、无国界、无边界”的思潮，
+              打破偏见与隔阂，让香气成为释放真我的能量场。
+            </p>
+          </div>
+
+          <div class="brand-block">
+            <h3>品牌愿景 / VISION</h3>
+            <p>
+              以新浪潮艺术构建全新的香味国度。不设限制，由你定义未来。每一款香氛，
+              都为心灵赋能，让人更自信、更坚定、更从容地面对世界。
+            </p>
+          </div>
+        </div>
+
+        <div class="brand-right">
+          <h3>STETMN 中国 · 什迪</h3>
+          <p>
+            以「什」之名，启「迪」自我。<br>
+            “什”寓意多样而丰富的色彩，“迪”取义引导，鼓励每个生命勇敢表达自我，
+            呈现更多元的世界。
+          </p>
+          <p>
+            2021 年，STETMN 携手全球知名香氛制造公司奇华顿入驻中国，以充满力量的香味
+            契合中国年轻一代的生活态度——治愈心灵，唤醒个性，跨越思想的限制，
+            让每个人尽情释放独有风格。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 香氛系列 -->
+  <section id="collection">
+    <div class="container">
+      <div class="section-title">COLLECTION</div>
+      <div class="section-subtitle">香氛系列 · EAU DE PARFUM</div>
+
+      <div class="card-grid">
+        <!-- Heartland -->
+        <div class="card">
+          <div class="card-label">SKU 01</div>
+          <div class="card-title">心灵之地 Heartland</div>
+          <div class="card-slogan">撷取生命的一束光 · Capture a beam of light in life</div>
+          <div class="card-notes">
+            <span>香调：</span>东方木质香调<br>
+            <span>前调：</span>胡椒、焚香<br>
+            <span>中调：</span>山谷百合<br>
+            <span>后调：</span>雪松、广藿香、麝香
+          </div>
+          <div class="card-story">
+            如同格拉斯的私人调香工坊，温暖而治愈，为当代青年提供一处心灵避难所。
+          </div>
+        </div>
+
+        <!-- British Green -->
+        <div class="card">
+          <div class="card-label">SKU 02</div>
+          <div class="card-title">青调英伦 British Green</div>
+          <div class="card-slogan">漫步纯澈新世界 · Walk through the pure new world</div>
+          <div class="card-notes">
+            <span>香调：</span>琥珀香调<br>
+            <span>前调：</span>姜、柑橘<br>
+            <span>中调：</span>梅子、薰衣草<br>
+            <span>后调：</span>香根草、龙涎香
+          </div>
+          <div class="card-story">
+            捕捉英国春日的青调气息，在林间小路与蓝铃花海中，重获平和与宁静。
+          </div>
+        </div>
+
+        <!-- Ashes of Memory -->
+        <div class="card">
+          <div class="card-label">SKU 03</div>
+          <div class="card-title">记忆之灰 Ashes of Memory</div>
+          <div class="card-slogan">记忆成灰，玫瑰暗自突围</div>
+          <div class="card-notes">
+            <span>香调：</span>玫瑰粉香调<br>
+            <span>前调：</span>香柠檬、红胡椒<br>
+            <span>中调：</span>玫瑰、牡丹、天芥菜<br>
+            <span>后调：</span>香草、檀香、秘鲁香脂、麝香
+          </div>
+          <div class="card-story">
+            将焚烧后的记忆化作玫瑰的土壤，在废墟中完成一场关于“新生”的玫瑰叙事。
+          </div>
+        </div>
+
+        <!-- Emerald Valley -->
+        <div class="card">
+          <div class="card-label">SKU 04</div>
+          <div class="card-title">翡翠谷 Emerald Valley</div>
+          <div class="card-slogan">每一刻都绿意满盈</div>
+          <div class="card-notes">
+            <span>香调：</span>花香、木香、青绿香<br>
+            <span>前调：</span>苦橙、柠檬<br>
+            <span>中调：</span>玫瑰、茉莉、覆盆子<br>
+            <span>后调：</span>鸢尾、雪松、檀香、麝香
+          </div>
+          <div class="card-story">
+            以山谷的呼吸节奏重组都市人的呼吸，让感官重新与自然共振。
+          </div>
+        </div>
+
+        <!-- Blackcurrant -->
+        <div class="card">
+          <div class="card-label">SKU 05</div>
+          <div class="card-title">黑醋栗岛 Blackcurrant</div>
+          <div class="card-slogan">闯入无尽之夏 · Burst into the endless summer</div>
+          <div class="card-notes">
+            <span>香调：</span>柑橘香调<br>
+            <span>前调：</span>柠檬、香柠檬<br>
+            <span>中调：</span>黑醋栗、雪松<br>
+            <span>后调：</span>龙涎香、Ambroxan
+          </div>
+          <div class="card-story">
+            一座藏在海图缝隙里的夏日岛屿，让每一道裂缝都住进盛夏光芒。
+          </div>
+        </div>
+
+        <!-- Unyielding Belief -->
+        <div class="card">
+          <div class="card-label">SKU 06</div>
+          <div class="card-title">倔强信仰 Unyielding Belief</div>
+          <div class="card-slogan">日复一日的独行诗篇</div>
+          <div class="card-notes">
+            <span>香调：</span>皮革调<br>
+            <span>前调：</span>佛手柑、粉红胡椒、黑胡椒<br>
+            <span>中调：</span>西伯利亚针叶、杜松、人参、绒面皮革<br>
+            <span>后调：</span>柏木、广藿香、香柏木
+          </div>
+          <div class="card-story">
+            致敬城市中无声的坚持，让香气成为独行者的隐秘铠甲与精神坐标。
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 蜡烛与香片 -->
+  <section id="candles">
+    <div class="container">
+      <div class="section-title">CANDLES & SCENT CARDS</div>
+      <div class="section-subtitle">蜡烛与香片</div>
+
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-label">CANDLE</div>
+          <div class="card-title">灵莓幻章 Fairy Berry</div>
+          <div class="card-slogan">撷取生命的一束光</div>
+          <div class="card-notes">
+            <span>燃烧时间：</span>约 24 小时<br>
+            <span>前调：</span>葡萄柚、菠萝<br>
+            <span>中调：</span>大黄、红色浆果、玫瑰<br>
+            <span>后调：</span>雪松、麝香
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-label">CANDLE</div>
+          <div class="card-title">心灵之地 Heartland</div>
+          <div class="card-slogan">撷取生命的一束光</div>
+          <div class="card-notes">
+            <span>燃烧时间：</span>约 24 小时<br>
+            <span>前调：</span>小豆蔻、玫瑰、檀香、雪松<br>
+            <span>中调：</span>桃金娘、茉莉、雪松<br>
+            <span>后调：</span>檀香、龙涎香、香草
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-label">SCENT CARD</div>
+          <div class="card-title">翡翠谷 Emerald Valley</div>
+          <div class="card-slogan">每一刻都绿意满盈</div>
+          <div class="card-notes">
+            <span>香调：</span>花香、木香、青绿香<br>
+            苦橙、柠檬、玫瑰、茉莉、覆盆子、鸢尾、雪松、檀香、麝香
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-label">SCENT CARD</div>
+          <div class="card-title">黑醋栗岛 Blackcurrant</div>
+          <div class="card-slogan">闯入无尽之夏</div>
+          <div class="card-notes">
+            <span>香调：</span>柑橘香调<br>
+            柠檬、香柠檬、黑醋栗、雪松、龙涎香、Ambroxan
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Manifesto 区块 -->
+  <section id="manifesto">
+    <div class="container">
+      <div class="manifesto">
+        <small>MANIFESTO</small>
+        <p>每一种独特都值得被尊重。</p>
+        <span>STETMN 用香气守护差异，让敢于不同的人被世界温柔接住。</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系方式 / 页脚 -->
+  <footer id="contact">
+    <div class="container footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">STETMN 什迪</div>
+        <div class="footer-slogan">Your difference, makes the world different.</div>
+      </div>
+      <div>
+        联系方式（示例）：<br>
+        邮箱：brand@example.com（你可以改成自己的）<br>
+      </div>
+      <div>© STETMN. All rights reserved.</div>
+    </div>
+  </footer>
 </body>
 </html>
