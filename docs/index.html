@@ -1,220 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STETMN London</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #F6F5F1; /* slightly warm grey like Aesop */
-            color: #111;
-            letter-spacing: 0.3px;
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>STETMN London</title>
 
-        /* --- Header --- */
-        header {
-            padding: 22px 48px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #F6F5F1;
-            position: sticky;
-            top: 0;
-        }
-        nav a {
-            margin-left: 30px;
-            text-decoration: none;
-            color: #111;
-            font-size: 14px;
-            letter-spacing: 1px;
-        }
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        background: #ffffff;
+        color: #000000;
+        letter-spacing: 0.4px;
+    }
 
-        /* --- Hero Section --- */
-        .hero {
-            width: 100%;
-            height: 72vh;
-            background: url("images/hero-wide.jpg") center/cover no-repeat;
-            position: relative;
-        }
-        .hero-text {
-            position: absolute;
-            bottom: 80px;
-            left: 70px;
-            background: rgba(255,255,255,0.5);
-            padding: 20px 40px;
-            max-width: 420px;
-        }
-        .hero-text h1 {
-            margin: 0;
-            font-size: 42px;
-            letter-spacing: 3px;
-        }
-        .hero-text p {
-            margin-top: 10px;
-            font-size: 14px;
-            line-height: 1.8;
-        }
+    /* Navigation */
+    header {
+        width: 100%;
+        padding: 20px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+    }
 
-        /* --- Sections --- */
-        section {
-            padding: 100px 12%;
-        }
+    nav a {
+        margin-left: 30px;
+        text-decoration: none;
+        font-size: 14px;
+        color: #000000;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
 
-        h2 {
-            font-size: 22px;
-            letter-spacing: 2px;
-            margin-bottom: 35px;
-        }
+    /* Hero Section */
+    .hero {
+        width: 100%;
+        height: 80vh;
+        background-image: url("images/hero.jpg");
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
 
-        /* --- About Section --- */
-        .about-text {
-            max-width: 600px;
-            line-height: 1.8;
-        }
+    .hero-text {
+        position: absolute;
+        bottom: 60px;
+        left: 60px;
+        color: #ffffff;
+        font-size: 32px;
+        font-weight: 300;
+        letter-spacing: 2px;
+    }
 
-        /* --- Products Grid --- */
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 60px;
-        }
-        .product {
-            text-align: left;
-        }
-        .product img {
-            width: 100%;
-            border-radius: 4px;
-        }
-        .product-name {
-            margin-top: 12px;
-            font-size: 14px;
-        }
+    /* Section common styling */
+    section {
+        max-width: 960px;
+        margin: 120px auto;
+        padding: 0 20px;
+        line-height: 1.8;
+    }
 
-        /* --- Footer --- */
-        footer {
-            text-align: center;
-            padding: 40px;
-            font-size: 13px;
-            color: #555;
-        }
+    h2 {
+        font-size: 28px;
+        font-weight: 400;
+        margin-bottom: 20px;
+        letter-spacing: 1px;
+    }
 
-        /* Mobile */
-        @media (max-width: 820px) {
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
-            .hero-text h1 {
-                font-size: 32px;
-            }
-        }
-    </style>
+    .subtext {
+        font-size: 14px;
+        opacity: 0.7;
+        margin-bottom: 40px;
+    }
+
+    /* Product Grid */
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 50px;
+        margin-top: 50px;
+    }
+
+    .product {
+        text-align: left;
+    }
+
+    .product img {
+        width: 100%;
+        height: 340px;
+        object-fit: cover;
+        background: #f2f2f2;
+    }
+
+    .product-title {
+        margin-top: 14px;
+        font-size: 15px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+    }
+
+    footer {
+        padding: 50px 0;
+        text-align: center;
+        font-size: 12px;
+        opacity: 0.6;
+    }
+</style>
 </head>
 
 <body>
 
-<!-- Header -->
 <header>
-    <div style="font-weight:bold; font-size:20px; letter-spacing:2px;">STETMN LONDON</div>
+    <div style="font-size:18px; letter-spacing:2px;">STETMN LONDON</div>
     <nav>
-        <a href="#about">ABOUT</a>
-        <a href="#products">PRODUCTS</a>
-        <a href="#contact">CONTACT</a>
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
     </nav>
 </header>
 
-<!-- Hero Section -->
+<!-- Hero -->
 <div class="hero">
-    <div class="hero-text">
-        <h1>STETMN</h1>
-        <p>A Modern Fragrance House from London.<br>  
-        现代香氛品牌，以克制、纯净与气味叙事为灵感。</p>
-    </div>
+    <div class="hero-text">A New Wave of Fragrance Art</div>
 </div>
 
-<!-- About -->
+<!-- Brand Intro -->
 <section id="about">
-    <h2>ABOUT STETMN</h2>
-    <div class="about-text">
-        STETMN is a London-based fragrance brand rooted in minimalism, clarity,  
-        and contemporary scent expression.  
-        <br><br>
-        我们以克制与优雅为核心，打造适合日常、富有故事性的现代香氛体验。
-    </div>
+    <h2>STETMN · 什迪</h2>
+    <div class="subtext">New Wave of British Fragrance Art · 英国香氛艺术新浪潮势力</div>
+
+    <h3 style="margin-top:40px;">Brand Positioning｜品牌定位</h3>
+    <p>
+        Crafted with rare fragrance materials to deliver healing scents and luxurious depth.
+        Inspiring a new wave of urban youth with sensual energy.<br><br>
+        以珍稀香氛原材创造独特治愈的芬芳，馥郁轻奢质感，唤醒当代都市新潮年轻人的心灵活力。
+    </p>
+
+    <h3 style="margin-top:40px;">Brand Philosophy｜品牌理念</h3>
+    <p>
+        STETMN believes every form of uniqueness deserves respect.  
+        Through fragrance artistry, we break boundaries and give individuals power to express their truest selves.<br><br>
+        STETMN 主张以“无性别、无国界、无边界”的领先思潮创造多元包容的理想世界，追逐平等，保护独特，崇尚公正，治愈新生。
+    </p>
+
+    <h3 style="margin-top:40px;">Brand Vision｜品牌愿景</h3>
+    <p>
+        STETMN envisions a new nation of fragrance — unrestricted, free, and defined by you.  
+        Every creation empowers the spirit, renewing confidence and strength.<br><br>
+        STETMN 将以新浪潮艺术构建全新的香味国度，让体验者更自信、更坚定、更从容面对世界。
+    </p>
 </section>
 
 <!-- Products -->
 <section id="products">
-    <h2>PRODUCTS</h2>
+    <h2>Fragrance Collection｜香氛系列</h2>
 
-    <div class="products-grid">
+    <div class="product-grid">
 
-        <!-- Perfume 01 -->
+        <!-- 6 Perfumes -->
         <div class="product">
-            <img src="images/product1.jpg" alt="">
-            <div class="product-name">Perfume No.01</div>
+            <img src="images/perfume1.jpg" alt="">
+            <div class="product-title">Perfume 01</div>
+        </div>
+        <div class="product">
+            <img src="images/perfume2.jpg" alt="">
+            <div class="product-title">Perfume 02</div>
+        </div>
+        <div class="product">
+            <img src="images/perfume3.jpg" alt="">
+            <div class="product-title">Perfume 03</div>
+        </div>
+        <div class="product">
+            <img src="images/perfume4.jpg" alt="">
+            <div class="product-title">Perfume 04</div>
+        </div>
+        <div class="product">
+            <img src="images/perfume5.jpg" alt="">
+            <div class="product-title">Perfume 05</div>
+        </div>
+        <div class="product">
+            <img src="images/perfume6.jpg" alt="">
+            <div the="product-title">Perfume 06</div>
         </div>
 
-        <!-- Perfume 02 -->
-        <div class="product">
-            <img src="images/product2.jpg" alt="">
-            <div class="product-name">Perfume No.02</div>
-        </div>
-
-        <!-- Perfume 03 -->
-        <div class="product">
-            <img src="images/product3.jpg" alt="">
-            <div class="product-name">Perfume No.03</div>
-        </div>
-
-        <!-- Perfume 04 -->
-        <div class="product">
-            <img src="images/product4.jpg" alt="">
-            <div class="product-name">Perfume No.04</div>
-        </div>
-
-        <!-- Perfume 05 -->
-        <div class="product">
-            <img src="images/product5.jpg" alt="">
-            <div class="product-name">Perfume No.05</div>
-        </div>
-
-        <!-- Perfume 06 -->
-        <div class="product">
-            <img src="images/product6.jpg" alt="">
-            <div class="product-name">Perfume No.06</div>
-        </div>
-
-        <!-- Candle 01 -->
+        <!-- 2 Candles -->
         <div class="product">
             <img src="images/candle1.jpg" alt="">
-            <div class="product-name">Aromatic Candle No.01</div>
+            <div class="product-title">Candle 01</div>
         </div>
-
-        <!-- Candle 02 -->
         <div class="product">
             <img src="images/candle2.jpg" alt="">
-            <div class="product-name">Aromatic Candle No.02</div>
+            <div class="product-title">Candle 02</div>
         </div>
 
-        <!-- Travel Aroma -->
+        <!-- 1 Travel Aroma -->
         <div class="product">
-            <img src="images/travel.jpg" alt="">
-            <div class="product-name">Travel Aroma / Hanging Scent</div>
+            <img src="images/travel1.jpg" alt="">
+            <div class="product-title">Travel Aroma</div>
         </div>
 
     </div>
 </section>
 
-<!-- Contact -->
-<section id="contact">
-    <h2>CONTACT</h2>
-    <p>Email: contact@stetmnlondon.com</p>
-</section>
-
 <footer>
-    © STETMN London. All rights reserved.
+    © 2025 STETMN London. All Rights Reserved.
 </footer>
 
 </body>
